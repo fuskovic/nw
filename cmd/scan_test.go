@@ -11,7 +11,7 @@ import (
 )
 
 func TestScanCommand(t *testing.T) {
-	test.WithNetworker(t, "output scanned devices as json", func(t *testing.T) {
+	test.WithNw(t, "output scanned devices as json", func(t *testing.T) {
 		// start the list command
 		cmd := exec.Command("networker", "scan", "-o", "json")
 		stdout, err := cmd.StdoutPipe()
@@ -26,7 +26,7 @@ func TestScanCommand(t *testing.T) {
 		// assert that the results are not empty
 		require.True(t, len(scanResults) > 0)
 	})
-	test.WithNetworker(t, "output scanned devices as yaml", func(t *testing.T) {
+	test.WithNw(t, "output scanned devices as yaml", func(t *testing.T) {
 		// start the list command
 		cmd := exec.Command("networker", "scan", "-o", "json")
 		stdout, err := cmd.StdoutPipe()

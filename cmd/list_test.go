@@ -13,7 +13,7 @@ import (
 )
 
 func TestListCommand(t *testing.T) {
-	test.WithNetworker(t, "list devices output as json", func(t *testing.T) {
+	test.WithNw(t, "list devices output as json", func(t *testing.T) {
 		// start the list command
 		cmd := exec.Command("networker", "ls", "-o", "json")
 		stdout, err := cmd.StdoutPipe()
@@ -28,7 +28,7 @@ func TestListCommand(t *testing.T) {
 		// assert that the devices are not empty
 		require.True(t, len(devices) > 0)
 	})
-	test.WithNetworker(t, "list devices output as yaml", func(t *testing.T) {
+	test.WithNw(t, "list devices output as yaml", func(t *testing.T) {
 		// start the list command
 		cmd := exec.Command("networker", "ls", "-o", "yaml")
 		stdout, err := cmd.StdoutPipe()
