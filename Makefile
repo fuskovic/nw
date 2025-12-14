@@ -36,4 +36,4 @@ docs:
 
 .PHONY: refresh
 refresh:
-	@GOPROXY=proxy.golang.org go list -m github.com/fuskovic/networker/v3@latest
+	@GOPROXY=proxy.golang.org go list -m github.com/fuskovic/nw/v4@latest

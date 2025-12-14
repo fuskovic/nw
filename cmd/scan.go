@@ -8,12 +8,12 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/fuskovic/networker/v3/internal/encoder"
-	"github.com/fuskovic/networker/v3/internal/list"
-	"github.com/fuskovic/networker/v3/internal/resolve"
-	"github.com/fuskovic/networker/v3/internal/scanner"
-	"github.com/fuskovic/networker/v3/internal/spinner"
-	"github.com/fuskovic/networker/v3/internal/usage"
+	"github.com/fuskovic/nw/v4/internal/encoder"
+	"github.com/fuskovic/nw/v4/internal/list"
+	"github.com/fuskovic/nw/v4/internal/resolve"
+	"github.com/fuskovic/nw/v4/internal/scanner"
+	"github.com/fuskovic/nw/v4/internal/spinner"
+	"github.com/fuskovic/nw/v4/internal/usage"
 )
 
 var scanAllPorts bool

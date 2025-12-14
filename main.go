@@ -1,6 +1,6 @@
 package main
 
-import "github.com/fuskovic/networker/v3/cmd"
+import "github.com/fuskovic/nw/v4/cmd"
 
 func main() {
 	cmd.Root.CompletionOptions.DisableDefaultCmd = true

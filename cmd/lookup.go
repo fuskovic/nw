@@ -4,9 +4,9 @@ import (
 	"net"
 	"os"
 
-	"github.com/fuskovic/networker/v3/internal/encoder"
-	"github.com/fuskovic/networker/v3/internal/resolve"
-	"github.com/fuskovic/networker/v3/internal/usage"
+	"github.com/fuskovic/nw/v4/internal/encoder"
+	"github.com/fuskovic/nw/v4/internal/resolve"
+	"github.com/fuskovic/nw/v4/internal/usage"
 	"github.com/spf13/cobra"
 )
 

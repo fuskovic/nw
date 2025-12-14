@@ -6,7 +6,7 @@ import (
 	"path"
 	"strings"
 
-	"github.com/fuskovic/networker/v3/cmd"
+	"github.com/fuskovic/nw/v4/cmd"
 	"github.com/spf13/cobra/doc"
 )
 

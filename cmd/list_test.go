@@ -6,8 +6,8 @@ import (
 
 	"testing"
 
-	"github.com/fuskovic/networker/v3/internal/list"
-	"github.com/fuskovic/networker/v3/internal/test"
+	"github.com/fuskovic/nw/v4/internal/list"
+	"github.com/fuskovic/nw/v4/internal/test"
 	"github.com/stretchr/testify/require"
 	"gopkg.in/yaml.v3"
 )

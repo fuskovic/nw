@@ -8,7 +8,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/fuskovic/networker/v3/internal/test"
+	"github.com/fuskovic/nw/v4/internal/test"
 	"github.com/stretchr/testify/require"
 )
 
