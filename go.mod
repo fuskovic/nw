@@ -1,8 +1,8 @@
-module github.com/fuskovic/networker/v3
+module github.com/fuskovic/nw/v4
 
-go 1.21
+go 1.25
 
-toolchain go1.22.0
+replace github.com/fuskovic/nw/v4 => ./
 
 require (
 	cdr.dev/coder-cli v1.17.0

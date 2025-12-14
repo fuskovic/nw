@@ -7,8 +7,8 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/fuskovic/networker/v3/internal/shell"
-	"github.com/fuskovic/networker/v3/internal/usage"
+	"github.com/fuskovic/nw/v4/internal/shell"
+	"github.com/fuskovic/nw/v4/internal/usage"
 )
 
 var port int
@@ -32,7 +32,7 @@ var shellCmd = &cobra.Command{
 
 	nw shell serve zsh --port 9000
 
-# Establish a new shell session by dialing a networker initiated shell server.
+# Establish a new shell session by dialing a nw initiated shell server.
 
 	nw shell dial some.remote.ip.addr:9000
 
@@ -77,7 +77,7 @@ var dialCmd = &cobra.Command{
 	Use:   "dial",
 	Short: "Dial a shell server.",
 	Example: `
-# Establish a new shell session by dialing a networker initiated shell server.
+# Establish a new shell session by dialing a nw initiated shell server.
 
 	nw shell dial some.remote.ip.addr:9000
 

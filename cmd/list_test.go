@@ -6,16 +6,16 @@ import (
 
 	"testing"
 
-	"github.com/fuskovic/networker/v3/internal/list"
-	"github.com/fuskovic/networker/v3/internal/test"
+	"github.com/fuskovic/nw/v4/internal/list"
+	"github.com/fuskovic/nw/v4/internal/test"
 	"github.com/stretchr/testify/require"
 	"gopkg.in/yaml.v3"
 )
 
 func TestListCommand(t *testing.T) {
-	test.WithNetworker(t, "list devices output as json", func(t *testing.T) {
+	test.WithNw(t, "list devices output as json", func(t *testing.T) {
 		// start the list command
-		cmd := exec.Command("networker", "ls", "-o", "json")
+		cmd := exec.Command("nw", "ls", "-o", "json")
 		stdout, err := cmd.StdoutPipe()
 		require.NoError(t, err)
 		require.NoError(t, cmd.Start())
@@ -28,9 +28,9 @@ func TestListCommand(t *testing.T) {
 		// assert that the devices are not empty
 		require.True(t, len(devices) > 0)
 	})
-	test.WithNetworker(t, "list devices output as yaml", func(t *testing.T) {
+	test.WithNw(t, "list devices output as yaml", func(t *testing.T) {
 		// start the list command
-		cmd := exec.Command("networker", "ls", "-o", "yaml")
+		cmd := exec.Command("nw", "ls", "-o", "yaml")
 		stdout, err := cmd.StdoutPipe()
 		require.NoError(t, err)
 		require.NoError(t, cmd.Start())

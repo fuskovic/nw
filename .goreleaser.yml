@@ -1,4 +1,4 @@
-project_name: networker
+project_name: nw
 builds:
   - main: .
     env:

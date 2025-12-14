@@ -8,7 +8,7 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-// ProjectRoot is a utility function for returning root path of the networker source code on this machine.
+// ProjectRoot is a utility function for returning root path of the nw source code on this machine.
 // It's primary purpose is to help construct absolute paths needed by tests.
 func ProjectRoot(t *testing.T) string {
 	t.Helper()

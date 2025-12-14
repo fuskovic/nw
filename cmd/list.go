@@ -7,10 +7,10 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/fuskovic/networker/v3/internal/encoder"
-	"github.com/fuskovic/networker/v3/internal/list"
-	"github.com/fuskovic/networker/v3/internal/spinner"
-	"github.com/fuskovic/networker/v3/internal/usage"
+	"github.com/fuskovic/nw/v4/internal/encoder"
+	"github.com/fuskovic/nw/v4/internal/list"
+	"github.com/fuskovic/nw/v4/internal/spinner"
+	"github.com/fuskovic/nw/v4/internal/usage"
 )
 
 func init() {
@@ -24,17 +24,13 @@ var listCmd = &cobra.Command{
 	Example: `
 # List devices on network:
 
-	networker list
-
-# List devices on network(short-hand):
-
 	nw ls
 
-# List devices on network(short-hand) and output as json:
+# List devices on network and output as json:
 
 	nw ls -o json
 
-# List devices on network(short-hand) and output as yaml:
+# List devices on network and output as yaml:
 
 	nw ls -o yaml
 `,

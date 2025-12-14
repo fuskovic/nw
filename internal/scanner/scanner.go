@@ -11,7 +11,7 @@ import (
 
 	goping "github.com/tatsushid/go-fastping"
 
-	"github.com/fuskovic/networker/v3/internal/resolve"
+	"github.com/fuskovic/nw/v4/internal/resolve"
 )
 
 var (
@@ -52,7 +52,7 @@ func New(hosts []string, shouldScanAll bool) Scanner {
 			_, _ = p.Network("udp")
 
 			netProto := "ip4:icmp"
-			if strings.Index(ip, ":") != -1 {
+			if strings.Contains(ip, ":") {
 				netProto = "ip6:ipv6-icmp"
 			}
 

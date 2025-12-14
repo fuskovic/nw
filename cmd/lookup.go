@@ -4,9 +4,9 @@ import (
 	"net"
 	"os"
 
-	"github.com/fuskovic/networker/v3/internal/encoder"
-	"github.com/fuskovic/networker/v3/internal/resolve"
-	"github.com/fuskovic/networker/v3/internal/usage"
+	"github.com/fuskovic/nw/v4/internal/encoder"
+	"github.com/fuskovic/nw/v4/internal/resolve"
+	"github.com/fuskovic/nw/v4/internal/usage"
 	"github.com/spf13/cobra"
 )
 
@@ -26,88 +26,66 @@ var lookupCmd = &cobra.Command{
 	Example: `
 # Lookup hostname by IP:
 
-	networker lookup hostname 8.8.8.8
-
-# Lookup hostname by IP(short-hand):
-
 	nw lu hn 8.8.8.8
 
-# Lookup hostname by IP(short-hand) and output as json:
+# Lookup hostname by IP and output as json:
 
 	nw lu hn 8.8.8.8 -o json
 
-# Lookup hostname by IP(short-hand) and output as yaml:
+# Lookup hostname by IP and output as yaml:
 
 	nw lu hn 8.8.8.8 -o yaml
 
 # Lookup IP by hostname:
 
-	networker lookup ip dns.google.
-
-# Lookup IP by hostname(short-hand):
-
 	nw lu ip dns.google.
 
-# Lookup IP by hostname(short-hand) and output as json:
+# Lookup IP by hostname and output as json:
 
 	nw lu ip dns.google. -o json
 
-# Lookup IP by hostname(short-hand) and output as yaml:
+# Lookup IP by hostname and output as yaml:
 
 	nw lu ip dns.google. -o yaml
 
 # Lookup nameservers by hostname:
 
-	networker lookup nameservers dns.google.
-
-# Lookup nameservers by hostname(short-hand):
-
 	nw lu ns dns.google.
 
-# Lookup nameservers by hostname(short-hand) and output as json:
+# Lookup nameservers by hostname and output as json:
 
 	nw lu ns dns.google. -o json
 
-# Lookup nameservers by hostname(short-hand) and output as yaml:
+# Lookup nameservers by hostname and output as yaml:
 
 	nw lu ns dns.google. -o yaml
 
 # Lookup ISP by ip or hostname:
 
-	networker lookup isp 8.8.8.8
-	networker lookup isp dns.google.
-
-# Lookup ISP by ip or hostname(short-hand):
-
 	nw lu isp 8.8.8.8
 	nw lu isp dns.google.
 
-# Lookup ISP by ip or hostname(short-hand) and output as json:
+# Lookup ISP by ip or hostname and output as json:
 
 	nw lu isp 8.8.8.8 -o json
 	nw lu isp dns.google. -o json
 
-# Lookup ISP by ip or hostname(short-hand) and output as yaml:
+# Lookup ISP by ip or hostname and output as yaml:
 
 	nw lu isp 8.8.8.8 -o yaml
 	nw lu isp dns.google. -o yaml
 
 # Lookup network by ip or hostname:
 
-	networker lookup network 8.8.8.8
-	networker lookup network dns.google.
-
-# Lookup network by ip or hostname(short-hand):
-
 	nw lu n 8.8.8.8
 	nw lu n dns.google.
 
-# Lookup network by ip or hostname(short-hand) and output as json:
+# Lookup network by ip or hostname and output as json:
 
 	nw lu n 8.8.8.8 -o json
 	nw lu n dns.google. -o json
 
-# Lookup network by ip or hostname(short-hand) and output as yaml:
+# Lookup network by ip or hostname and output as yaml:
 
 	nw lu n 8.8.8.8 -o yaml
 	nw lu n dns.google. -o yaml
@@ -126,17 +104,13 @@ var lookupHostnameCmd = &cobra.Command{
 	Example: `
 # Lookup hostname by IP:
 
-	networker lookup hostname 8.8.8.8
-
-# Lookup hostname by IP(short-hand):
-
 	nw lu hn 8.8.8.8
 
-# Lookup hostname by IP(short-hand) and output as json:
+# Lookup hostname by IP and output as json:
 
 	nw lu hn 8.8.8.8 -o json
 
-# Lookup hostname by IP(short-hand) and output as yaml:
+# Lookup hostname by IP and output as yaml:
 
 	nw lu hn 8.8.8.8 -o yaml
 
@@ -160,17 +134,13 @@ var lookupIpaddressCmd = &cobra.Command{
 	Example: `
 # Lookup IP by hostname:
 
-	networker lookup ip dns.google.
-
-# Lookup IP by hostname(short-hand):
-
 	nw lu ip dns.google.
 
-# Lookup IP by hostname(short-hand) and output as json:
+# Lookup IP by hostname and output as json:
 
 	nw lu ip dns.google. -o json
 
-# Lookup IP by hostname(short-hand) and output as yaml:
+# Lookup IP by hostname and output as yaml:
 
 	nw lu ip dns.google. -o yaml
 
@@ -199,20 +169,15 @@ var lookupIspCmd = &cobra.Command{
 	Example: `
 # Lookup ISP by ip or hostname:
 
-	networker lookup isp 8.8.8.8
-	networker lookup isp dns.google.
-
-# Lookup ISP by ip or hostname(short-hand):
-
 	nw lu isp 8.8.8.8
 	nw lu isp dns.google.
 
-# Lookup ISP by ip or hostname(short-hand) and output as json:
+# Lookup ISP by ip or hostname and output as json:
 
 	nw lu isp 8.8.8.8 -o json
 	nw lu isp dns.google. -o json
 
-# Lookup ISP by ip or hostname(short-hand) and output as yaml:
+# Lookup ISP by ip or hostname and output as yaml:
 
 	nw lu isp 8.8.8.8 -o yaml
 	nw lu isp dns.google. -o yaml
@@ -248,17 +213,13 @@ var lookupNameserversCmd = &cobra.Command{
 	Example: `
 # Lookup nameservers by hostname:
 
-	networker lookup nameservers dns.google.
-
-# Lookup nameservers by hostname(short-hand):
-
 	nw lu ns dns.google.
 
-# Lookup nameservers by hostname(short-hand) and output as json:
+# Lookup nameservers by hostname and output as json:
 
 	nw lu ns dns.google. -o json
 
-# Lookup nameservers by hostname(short-hand) and output as yaml:
+# Lookup nameservers by hostname and output as yaml:
 
 	nw lu ns dns.google. -o yaml
 `,
@@ -287,20 +248,15 @@ var lookupNetworkCmd = &cobra.Command{
 	Example: `
 # Lookup network by ip or hostname:
 
-	networker lookup network 8.8.8.8
-	networker lookup network dns.google.
-
-# Lookup network by ip or hostname(short-hand):
-
 	nw lu n 8.8.8.8
 	nw lu n dns.google.
 
-# Lookup network by ip or hostname(short-hand) and output as json:
+# Lookup network by ip or hostname and output as json:
 
 	nw lu n 8.8.8.8 -o json
 	nw lu n dns.google. -o json
 
-# Lookup network by ip or hostname(short-hand) and output as yaml:
+# Lookup network by ip or hostname and output as yaml:
 
 	nw lu n 8.8.8.8 -o yaml
 	nw lu n dns.google. -o yaml

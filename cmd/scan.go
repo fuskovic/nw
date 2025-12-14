@@ -8,12 +8,12 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/fuskovic/networker/v3/internal/encoder"
-	"github.com/fuskovic/networker/v3/internal/list"
-	"github.com/fuskovic/networker/v3/internal/resolve"
-	"github.com/fuskovic/networker/v3/internal/scanner"
-	"github.com/fuskovic/networker/v3/internal/spinner"
-	"github.com/fuskovic/networker/v3/internal/usage"
+	"github.com/fuskovic/nw/v4/internal/encoder"
+	"github.com/fuskovic/nw/v4/internal/list"
+	"github.com/fuskovic/nw/v4/internal/resolve"
+	"github.com/fuskovic/nw/v4/internal/scanner"
+	"github.com/fuskovic/nw/v4/internal/spinner"
+	"github.com/fuskovic/nw/v4/internal/usage"
 )
 
 var scanAllPorts bool
@@ -30,65 +30,49 @@ var scanCmd = &cobra.Command{
 	Example: `
 # Scan well-known ports(first 1024) of all devices on network:
 
-		networker scan
-
-# Scan well-known ports(first 1024) of all devices on network(short-hand):
-
 		nw s
 
-# Scan well-known ports(first 1024) of all devices on network(short-hand) and output as json:
+# Scan well-known ports(first 1024) of all devices on network and output as json:
 
 		nw s -o json
 
-# Scan well-known ports(first 1024) of all devices on network(short-hand) and output as yaml:
+# Scan well-known ports(first 1024) of all devices on network and output as yaml:
 
 		nw s -o yaml
 
 # Scan all ports of all devices on network:
 
-		networker scan --all-ports
-
-# Scan all ports of all devices on network(short-hand):
-
 		nw s --all-ports
 
-# Scan all ports of all devices on network(short-hand) and output as json:
+# Scan all ports of all devices on network and output as json:
 
 		nw s -o json --all-ports
 
-# Scan all ports of all devices on network(short-hand) and output as yaml:
+# Scan all ports of all devices on network and output as yaml:
 
 		nw s -o yaml --all-ports
 
 # Scan well-known ports(first 1024) of single host:
 
-		networker scan localhost
-
-# Scan well-known ports(first 1024) of single host(short-hand):
-
 		nw s localhost
 
-# Scan well-known ports(first 1024) of single host(short-hand) and output as json:
+# Scan well-known ports(first 1024) of single host and output as json:
 
 		nw s localhost -o json
 
-# Scan well-known ports(first 1024) of single host(short-hand) and output as yaml:
+# Scan well-known ports(first 1024) of single host and output as yaml:
 
 		nw s localhost -o yaml
 
 # Scan all ports of single host:
 
-		networker scan localhost --all-ports
-
-# Scan all ports of single host(short-hand):
-
 		nw s localhost --all-ports
 
-# Scan all ports of single host(short-hand) and output as json:
+# Scan all ports of single host and output as json:
 
 		nw s localhost -o json --all-ports
 
-# Scan all ports of single host(short-hand) and output as yaml:
+# Scan all ports of single host and output as yaml:
 
 		nw s localhost -o yaml --all-ports
 
