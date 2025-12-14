@@ -24,17 +24,13 @@ var listCmd = &cobra.Command{
 	Example: `
 # List devices on network:
 
-	networker list
-
-# List devices on network(short-hand):
-
 	nw ls
 
-# List devices on network(short-hand) and output as json:
+# List devices on network and output as json:
 
 	nw ls -o json
 
-# List devices on network(short-hand) and output as yaml:
+# List devices on network and output as yaml:
 
 	nw ls -o yaml
 `,
