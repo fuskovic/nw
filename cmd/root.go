@@ -20,7 +20,6 @@ func init() {
 
 var Root = &cobra.Command{
 	Use:     "nw",
-	Aliases: []string{"nw"},
 	Short:   "A simple networking utility.",
 	Args:    cobra.NoArgs,
 	Run: func(cmd *cobra.Command, args []string) {
