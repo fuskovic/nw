@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rm -f $(which networker) > /dev/null
+rm -f $(which nw) > /dev/null
 
 if [[ -z "$GOBIN" ]]; then
     echo "GOBIN unset"
@@ -15,12 +15,12 @@ echo "installing"
 PROJECT_ROOT=$(git rev-parse --show-toplevel)
 go install $PROJECT_ROOT
 if [ $? -ne 0 ]; then
-    echo "failed to compile networker"
+    echo "failed to compile nw"
     exit 1
 fi
 
-networker -v
+nw -v
 if [ $? -ne 0 ]; then
-    echo "failed to validate networker installation"
+    echo "failed to validate nw installation"
     exit 1
 fi

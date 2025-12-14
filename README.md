@@ -1,4 +1,4 @@
-# Networker
+# nw
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/fuskovic/nw/v4)](https://goreportcard.com/report/github.com/fuskovic/nw/v4)
 <a href='https://github.com/jpoles1/gopherbadger' target='_blank'>![gopherbadger-tag-do-not-edit](https://img.shields.io/badge/Go%20Coverage-74%25-brightgreen.svg?longCache=true&style=flat)</a>
@@ -21,8 +21,8 @@ Or Download a pre-compiled binary from the [releases](https://github.com/fuskovi
 
 # Verify your installation
 
-    networker -v
+    nw -v
 
 # Documentation
 
-See [Docs](https://github.com/fuskovic/nw/blob/master/docs/networker.md) for command examples.
+See [Docs](https://github.com/fuskovic/nw/blob/master/docs/nw.md) for command examples.
