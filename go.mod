@@ -1,12 +1,11 @@
-module github.com/fuskovic/networker/v3
+module github.com/fuskovic/nw/v4
 
-go 1.21
-
-toolchain go1.22.0
+go 1.25
 
 require (
 	cdr.dev/coder-cli v1.17.0
 	github.com/ammario/ipisp v1.0.0
+	github.com/fuskovic/networker/v3 v3.1.3
 	github.com/jackpal/gateway v1.0.15
 	github.com/spf13/cobra v1.4.0
 	github.com/stretchr/testify v1.9.0
