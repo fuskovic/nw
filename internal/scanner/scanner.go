@@ -52,7 +52,7 @@ func New(hosts []string, shouldScanAll bool) Scanner {
 			_, _ = p.Network("udp")
 
 			netProto := "ip4:icmp"
-			if strings.Index(ip, ":") != -1 {
+			if strings.Contains(ip, ":") {
 				netProto = "ip6:ipv6-icmp"
 			}
 
