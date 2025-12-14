@@ -13,7 +13,7 @@ import (
 func TestScanCommand(t *testing.T) {
 	test.WithNw(t, "output scanned devices as json", func(t *testing.T) {
 		// start the list command
-		cmd := exec.Command("networker", "scan", "-o", "json")
+		cmd := exec.Command("nw", "scan", "-o", "json")
 		stdout, err := cmd.StdoutPipe()
 		require.NoError(t, err)
 		require.NoError(t, cmd.Start())
@@ -28,7 +28,7 @@ func TestScanCommand(t *testing.T) {
 	})
 	test.WithNw(t, "output scanned devices as yaml", func(t *testing.T) {
 		// start the list command
-		cmd := exec.Command("networker", "scan", "-o", "json")
+		cmd := exec.Command("nw", "scan", "-o", "json")
 		stdout, err := cmd.StdoutPipe()
 		require.NoError(t, err)
 		require.NoError(t, cmd.Start())

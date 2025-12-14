@@ -15,13 +15,13 @@ import (
 func TestServeCommand(t *testing.T) {
 	t.Run("ShouldFail", func(t *testing.T) {
 		test.WithNw(t, "if shell is unsupported", func(t *testing.T) {
-			cmd := exec.Command("networker", "shell", "serve", "unsupported")
+			cmd := exec.Command("nw", "shell", "serve", "unsupported")
 			output, err := cmd.CombinedOutput()
 			require.Error(t, err)
 			require.Contains(t, string(output), "shell \"unsupported\" is not supported")
 		})
 		test.WithNw(t, "if shell is not installed", func(t *testing.T) {
-			cmd := exec.Command("networker", "shell", "serve", "fish")
+			cmd := exec.Command("nw", "shell", "serve", "fish")
 			output, err := cmd.CombinedOutput()
 			require.Error(t, err)
 			require.Contains(t,
@@ -30,7 +30,7 @@ func TestServeCommand(t *testing.T) {
 			)
 		})
 		test.WithNw(t, "if port is invalid", func(t *testing.T) {
-			cmd := exec.Command("networker", "shell", "serve", "-p", "70000")
+			cmd := exec.Command("nw", "shell", "serve", "-p", "70000")
 			output, err := cmd.CombinedOutput()
 			require.Error(t, err)
 			require.Contains(t, string(output), "not a valid port")
@@ -39,7 +39,7 @@ func TestServeCommand(t *testing.T) {
 	t.Run("ShouldPass", func(t *testing.T) {
 		test.WithNw(t, "if args are valid", func(t *testing.T) {
 			t.Skip()
-			cmd := exec.Command("networker", "shell", "serve", "-p", "2222")
+			cmd := exec.Command("nw", "shell", "serve", "-p", "2222")
 			require.NoError(t, cmd.Start())
 
 			// validate that the server is up
@@ -55,7 +55,7 @@ func TestServeCommand(t *testing.T) {
 func TestDialCommand(t *testing.T) {
 	t.Run("ShouldFail", func(t *testing.T) {
 		test.WithNw(t, "if target addr is not serving shell", func(t *testing.T) {
-			cmd := exec.Command("networker", "shell", "dial", "localhost:9000")
+			cmd := exec.Command("nw", "shell", "dial", "localhost:9000")
 			output, err := cmd.CombinedOutput()
 			require.Error(t, err)
 			require.Contains(t, string(output), "connect: connection refused")
@@ -63,7 +63,7 @@ func TestDialCommand(t *testing.T) {
 	})
 	t.Run("ShouldPass", func(t *testing.T) {
 		test.WithNw(t, "if dialing active shell server with valid args", func(t *testing.T) {
-			cmd := exec.Command("networker", "shell", "serve", "-p", "8000")
+			cmd := exec.Command("nw", "shell", "serve", "-p", "8000")
 			require.NoError(t, cmd.Start())
 
 			// validate that the server is up
@@ -83,7 +83,7 @@ func TestDialCommand(t *testing.T) {
 			t.Logf("og_pid: %d\n", ogPid)
 
 			// dial it using the dial subcommand
-			cmd = exec.Command("networker", "shell", "dial", "localhost:8000")
+			cmd = exec.Command("nw", "shell", "dial", "localhost:8000")
 			require.NoError(t, cmd.Start())
 
 			// grace period to wait for connection to establish

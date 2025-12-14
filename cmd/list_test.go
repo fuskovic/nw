@@ -15,7 +15,7 @@ import (
 func TestListCommand(t *testing.T) {
 	test.WithNw(t, "list devices output as json", func(t *testing.T) {
 		// start the list command
-		cmd := exec.Command("networker", "ls", "-o", "json")
+		cmd := exec.Command("nw", "ls", "-o", "json")
 		stdout, err := cmd.StdoutPipe()
 		require.NoError(t, err)
 		require.NoError(t, cmd.Start())
@@ -30,7 +30,7 @@ func TestListCommand(t *testing.T) {
 	})
 	test.WithNw(t, "list devices output as yaml", func(t *testing.T) {
 		// start the list command
-		cmd := exec.Command("networker", "ls", "-o", "yaml")
+		cmd := exec.Command("nw", "ls", "-o", "yaml")
 		stdout, err := cmd.StdoutPipe()
 		require.NoError(t, err)
 		require.NoError(t, cmd.Start())
